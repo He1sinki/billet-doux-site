@@ -1,0 +1,101 @@
+/* Le site de Billet Doux : les couleurs et polices de l'app, papier rosé et encre prune.
+   Les polices sont servies par le site lui-même : aucune requête vers un autre service. */
+@font-face { font-family: Gloock; src: url(polices/Gloock_400Regular.woff) format('woff'); font-display: swap; }
+@font-face { font-family: Kalam; src: url(polices/Kalam_400Regular.woff) format('woff'); font-display: swap; }
+@font-face { font-family: Figtree; font-weight: 400; src: url(polices/Figtree_400Regular.woff) format('woff'); font-display: swap; }
+@font-face { font-family: Figtree; font-weight: 600; src: url(polices/Figtree_600SemiBold.woff) format('woff'); font-display: swap; }
+
+:root {
+  color-scheme: light dark;
+  --papier: #F7EAE8;
+  --carte: #FFF9F8;
+  --encre: #34162A;
+  --douce: #7B5A6B;
+  --framboise: #C72C57;
+  --ligne: #EBD3D3;
+  --rose: #F2C9CF;
+  --menthe: #2E7A68;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --papier: #1B0F17;
+    --carte: #2A1824;
+    --encre: #F7E6EC;
+    --douce: #C4A3B4;
+    --framboise: #FF6F93;
+    --ligne: #45293B;
+    --rose: #5A2A43;
+    --menthe: #72C9B2;
+  }
+}
+
+* { box-sizing: border-box; }
+html { -webkit-text-size-adjust: 100%; }
+body {
+  margin: 0;
+  background: var(--papier);
+  color: var(--encre);
+  font: 400 1.0625rem/1.6 Figtree, system-ui, -apple-system, 'Segoe UI', sans-serif;
+  overflow-wrap: break-word;
+}
+.page { max-width: 46rem; margin: 0 auto; padding: 0 16px; }
+
+h1, h2, h3 { font-family: Gloock, Georgia, serif; font-weight: 400; line-height: 1.15; margin: 0; }
+h2 { font-size: 1.6rem; margin: 2.6rem 0 0.8rem; }
+h3 { font-size: 1.2rem; }
+p, ul { margin: 0 0 0.9rem; }
+ul { padding-left: 1.2rem; }
+li { margin-bottom: 0.45rem; }
+b, strong { font-weight: 600; }
+a { color: var(--framboise); text-underline-offset: 0.18em; }
+a:hover { text-decoration-thickness: 2px; }
+a:focus-visible { outline: 2px solid var(--framboise); outline-offset: 3px; border-radius: 4px; }
+
+/* Le cœur de l'icône : crème sur framboise, dans les deux thèmes. */
+.logo {
+  display: grid; place-items: center;
+  width: 4.5rem; height: 4.5rem; border-radius: 1.1rem;
+  background: #C72C57; box-shadow: 0 10px 30px -12px rgba(52, 22, 42, 0.55);
+}
+.logo svg { width: 62%; height: 62%; }
+.logo.petit { width: 2.25rem; height: 2.25rem; border-radius: 0.6rem; box-shadow: none; }
+
+/* Accueil */
+.accueil { padding: 4.5rem 0 2.5rem; }
+.accueil h1 { font-size: clamp(3.2rem, 14vw, 5.5rem); margin-top: 1.6rem; letter-spacing: -0.01em; }
+.devise { font-family: Kalam, 'Bradley Hand', cursive; font-size: clamp(1.3rem, 4.6vw, 1.65rem); line-height: 1.35; margin: 0.6rem 0 1.4rem; }
+.intro { font-size: 1.15rem; max-width: 36rem; }
+.etat {
+  display: inline-block; margin-top: 0.6rem; padding: 0.35rem 0.9rem;
+  border: 1px solid var(--ligne); border-radius: 999px; background: var(--carte);
+  color: var(--douce); font-size: 0.95rem;
+}
+.trois { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 1rem 0 0; }
+@media (max-width: 44rem) { .trois { grid-template-columns: 1fr; } }
+.carte { background: var(--carte); border: 1px solid var(--ligne); border-radius: 14px; padding: 1.1rem 1.25rem; }
+.carte h2, .carte h3 { margin: 0 0 0.5rem; }
+.trois .carte h2 { font-size: 1.3rem; }
+.trois .carte p { margin: 0; color: var(--douce); }
+.autre-langue { margin-top: 3rem; }
+.autre-langue h2 { font-size: 1.3rem; margin: 0 0 0.5rem; }
+
+/* Pages de texte */
+.haut { display: flex; align-items: center; gap: 0.7rem; padding: 1.4rem 0; }
+.haut a { display: flex; align-items: center; gap: 0.7rem; color: var(--encre); text-decoration: none; font-family: Gloock, Georgia, serif; font-size: 1.35rem; }
+.texte h1 { font-size: clamp(2.4rem, 10vw, 3.4rem); margin-top: 1.5rem; }
+.maj { color: var(--douce); margin: 0.6rem 0 1.8rem; }
+.bref { margin-top: 0.5rem; }
+.bref ul { margin: 0; }
+.donnees { display: grid; gap: 10px; margin-top: 1.2rem; }
+.donnees dl { margin: 0.6rem 0 0; display: grid; grid-template-columns: 8.5rem 1fr; gap: 0.35rem 1rem; }
+.donnees dt { color: var(--douce); }
+.donnees dd { margin: 0; }
+.chiffre { color: var(--menthe); font-weight: 600; }
+@media (max-width: 34rem) {
+  .donnees dl { grid-template-columns: 1fr; gap: 0; }
+  .donnees dd { margin-bottom: 0.45rem; }
+}
+.separation { border: 0; border-top: 1px solid var(--ligne); margin: 4rem 0 0; }
+
+.bas { border-top: 1px solid var(--ligne); margin-top: 4rem; padding: 1.6rem 0 2.6rem; color: var(--douce); font-size: 0.95rem; }
+.bas p { margin: 0.3rem 0; }
