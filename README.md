@@ -1,7 +1,7 @@
 # Site de Billet Doux
 
 La page d’accueil et la politique de confidentialité de Billet Doux, servies par GitHub Pages :
-https://he1sinki.github.io/billet-doux-site/
+https://billetdouxapp.github.io/
 
 - `index.html` : l’accueil ;
 - `confidentialite.html` : la politique de confidentialité (français, puis anglais à `#en`) ;
